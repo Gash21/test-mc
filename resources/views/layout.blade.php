@@ -21,7 +21,8 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/">Hopscotch</a></li>
                         <li><a href="api-call">API Call</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="tools">Tools</a></li>
+                        <li><a href="contact">Contact</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>

@@ -73,14 +73,15 @@ $(document).ready(function() {
           request.setRequestHeader("Content-Type", "application/json");
         },
         type: 'POST',
-        url: "http://api.sandbox.id.mcpayment.net:9000/va/transactions?payment=VA_CIMB",
+        // url: "http://api.sandbox.id.mcpayment.net:9000/va/transactions?payment=VA_CIMB",
+        url: "api/test",
         processData: false,
         data: JSON.stringify(data),
         success: function(result){
           console.log(result);
         }
       }).done(function() {
-        $( this ).addClass( "done" );
+        alert('ok');
       });
     }
     return false;

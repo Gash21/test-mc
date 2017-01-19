@@ -13,4 +13,4 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::post('va/transactions', "ApiController@createVirtualAccount");
+Route::post('test', "ApiController@createVirtualAccount");

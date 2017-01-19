@@ -17,4 +17,12 @@ class HopscotchController extends Controller
     public function apiCall(){
     	return view('api-call');
     }
+
+    public function tools(){
+    	return view('tools');
+    }
+
+    public function contact(){
+    	return view('contact');
+    }
 }

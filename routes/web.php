@@ -18,3 +18,5 @@
 Route::get('/', 'HopscotchController@index');
 Route::get('hopscotch', 'HopscotchController@index');
 Route::get('api-call', 'HopscotchController@apiCall');
+Route::get('tools', 'HopscotchController@tools');
+Route::get('contact', 'HopscotchController@contact');
