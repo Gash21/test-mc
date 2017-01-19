@@ -4,13 +4,13 @@ var tour = {
     {
       title: "Input Text",
       content: "Ini input text",
-      target: "textHop",
+      target: "#textHop",
       placement: "bottom"
     },
     {
       title: "Dropdown",
       content: "Ini dropdown",
-      target: "dropdownHop",
+      target: "#dropdownHop",
       placement: "bottom"
     },
     {
