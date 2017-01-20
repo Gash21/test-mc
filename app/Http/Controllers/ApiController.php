@@ -17,7 +17,7 @@ class ApiController extends Controller
 		$merchant_id = $request->mrc_id;
 		$customer_info = $request->customer_info;
  		$signature = $request->signature;
- 		$checkSign = hash('sha256', $this->secret . $merchant_id . $customer_info . $payment_info . $order_id);
+ 		$checkSign = hash('sha256', $this->secret . $merchant_id . $amount . $customer_info . $payment_info . $order_id);
 
  		if($checkSign == $signature){
 	 		return response()->json([

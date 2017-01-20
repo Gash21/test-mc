@@ -47,6 +47,12 @@
 				</form>
 			</div>
 		</div>
+		<div class="col-lg-12" style="margin-bottom:12px">
+			<div class="col-lg-offset-3 col-lg-6">
+				<h4>Response</h4>
+				<textarea id="responseText" class="form-control" rows="10" disabled="true"></textarea>
+			</div>
+		</div>
 	</div>
 </div>
 <!-- /.container -->

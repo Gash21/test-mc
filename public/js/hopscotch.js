@@ -46,7 +46,7 @@ $(document).ready(function() {
       customer_info: {
         required: true
       },
-      amounts: {
+      amount: {
         required: true
       }
     }
@@ -65,23 +65,25 @@ $(document).ready(function() {
     if($(this).valid()){
       var data = $(this).serializeJSON();
       var secret = 'bwMo0k9XPW';
-      data.signature = sha256_digest(secret + data.mrc_id + data.customer_info + data.payment_info + data.order_id);
+      data.signature = sha256_digest(secret + data.mrc_id + data.amount + data.customer_info + data.payment_info + data.order_id);
 
       $.ajax({
-        beforeSend: function(request) {
-          request.setRequestHeader("x-api-key", "LPbGFVMzrcB0KuAO5t8a");
-          request.setRequestHeader("Content-Type", "application/json");
+        async: true,
+        crossDomain: true,
+        url: "https://api.sandbox.id.mcpayment.net:9000/va/transactions?payment=VA_CIMB",
+        type: 'OPTIONS',
+        headers: {
+          "x-api-key": "LPbGFVMzrcB0KuAO5t8a",
+          "content-type": "application/json",
+          "cache-control": "no-cache"
+          // "postman-token": "8c71b1d5-e699-7ea9-17c7-bcf2aa08a841"
         },
-        type: 'POST',
-        // url: "http://api.sandbox.id.mcpayment.net:9000/va/transactions?payment=VA_CIMB",
-        url: "api/test",
+        // url: "http://api.dev/api/test",
         processData: false,
         data: JSON.stringify(data),
         success: function(result){
-          console.log(result);
+          $('#responseText').val(JSON.stringify(result));
         }
-      }).done(function() {
-        alert('ok');
       });
     }
     return false;
