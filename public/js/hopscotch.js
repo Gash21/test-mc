@@ -66,22 +66,25 @@ $(document).ready(function() {
       var data = $(this).serializeJSON();
       var secret = 'bwMo0k9XPW';
       data.signature = sha256_digest(secret + data.mrc_id + data.amount + data.customer_info + data.payment_info + data.order_id);
-
+      $('#requestText').val(JSON.stringify(data));
       $.ajax({
         async: true,
         crossDomain: true,
-        url: "https://api.sandbox.id.mcpayment.net:9000/va/transactions?payment=VA_CIMB",
-        type: 'OPTIONS',
+        // url: "https://api.sandbox.id.mcpayment.net:9000/va/transactions?payment=VA_CIMB",
+        type: 'POST',
         headers: {
           "x-api-key": "LPbGFVMzrcB0KuAO5t8a",
           "content-type": "application/json",
           "cache-control": "no-cache"
           // "postman-token": "8c71b1d5-e699-7ea9-17c7-bcf2aa08a841"
         },
-        // url: "http://api.dev/api/test",
+        url: "http://api.dev/api/test",
         processData: false,
         data: JSON.stringify(data),
         success: function(result){
+          $('#responseText').val(JSON.stringify(result));
+        },
+        fail: function(result){
           $('#responseText').val(JSON.stringify(result));
         }
       });

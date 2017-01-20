@@ -18,8 +18,8 @@
 </nav>
 <div class="container" >
 	<div class="">
-		<div class="col-lg-12" style="margin-bottom:12px">
-			<div class="col-lg-offset-3 col-lg-6">
+		<div class="col-md-12" style="margin-bottom:12px">
+			<div class="col-md-offset-3 col-md-6">
 				<form id="apiCall" method="POST" action="">
 				<div class="form-group forms">
 				  	<label id="merchantId" >Merchant ID</label>
@@ -47,8 +47,12 @@
 				</form>
 			</div>
 		</div>
-		<div class="col-lg-12" style="margin-bottom:12px">
-			<div class="col-lg-offset-3 col-lg-6">
+		<div class="col-md-12" style="margin-bottom:12px">
+			<div class="col-md-offset-3 col-md-6">
+				<h4>Request</h4>
+				<textarea id="requestText" class="form-control" rows="10" disabled="true"></textarea>
+			</div>
+			<div class="col-md-offset-3 col-md-6">
 				<h4>Response</h4>
 				<textarea id="responseText" class="form-control" rows="10" disabled="true"></textarea>
 			</div>
